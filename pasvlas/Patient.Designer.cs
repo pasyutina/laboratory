@@ -44,14 +44,14 @@
             this.surname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.login = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.buttonEdit = new System.Windows.Forms.Button();
-            this.buttonDel = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
             this.date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pasport = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.phone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.polisy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonDel = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
@@ -64,7 +64,7 @@
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
-            this.buttonSearch = new System.Windows.Forms.Button();
+            this.labelSearch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,6 +188,30 @@
             this.password.Text = "Пароль";
             this.password.Width = 76;
             // 
+            // date
+            // 
+            this.date.Text = "Дата рождения";
+            this.date.Width = 116;
+            // 
+            // pasport
+            // 
+            this.pasport.Text = "Серия и № паспорта";
+            this.pasport.Width = 145;
+            // 
+            // phone
+            // 
+            this.phone.Text = "Телефон";
+            this.phone.Width = 78;
+            // 
+            // email
+            // 
+            this.email.Text = "e-mail";
+            // 
+            // polisy
+            // 
+            this.polisy.Text = "№ страхового полиса";
+            this.polisy.Width = 86;
+            // 
             // buttonEdit
             // 
             this.buttonEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(227)))), ((int)(((byte)(131)))));
@@ -229,30 +253,6 @@
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // date
-            // 
-            this.date.Text = "Дата рождения";
-            this.date.Width = 116;
-            // 
-            // pasport
-            // 
-            this.pasport.Text = "Серия и № паспорта";
-            this.pasport.Width = 145;
-            // 
-            // phone
-            // 
-            this.phone.Text = "Телефон";
-            this.phone.Width = 78;
-            // 
-            // email
-            // 
-            this.email.Text = "e-mail";
-            // 
-            // polisy
-            // 
-            this.polisy.Text = "№ страхового полиса";
-            this.polisy.Width = 86;
             // 
             // textBoxEmail
             // 
@@ -361,26 +361,22 @@
             // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(12, 200);
+            this.textBoxSearch.Location = new System.Drawing.Point(148, 200);
             this.textBoxSearch.MaxLength = 11;
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(570, 30);
+            this.textBoxSearch.Size = new System.Drawing.Size(656, 30);
             this.textBoxSearch.TabIndex = 38;
             this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             // 
-            // buttonSearch
+            // labelSearch
             // 
-            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(227)))), ((int)(((byte)(131)))));
-            this.buttonSearch.FlatAppearance.BorderSize = 0;
-            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonSearch.Location = new System.Drawing.Point(588, 200);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(216, 30);
-            this.buttonSearch.TabIndex = 37;
-            this.buttonSearch.Text = "Поиск";
-            this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            this.labelSearch.AutoSize = true;
+            this.labelSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelSearch.Location = new System.Drawing.Point(8, 203);
+            this.labelSearch.Name = "labelSearch";
+            this.labelSearch.Size = new System.Drawing.Size(134, 23);
+            this.labelSearch.TabIndex = 39;
+            this.labelSearch.Text = "Найти пациента";
             // 
             // Patient
             // 
@@ -388,8 +384,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(816, 452);
+            this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.textBoxSearch);
-            this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.textBoxStrah);
             this.Controls.Add(this.labelStrah);
@@ -415,7 +411,7 @@
             this.Controls.Add(this.buttonAdd);
             this.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Patient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Пациенты";
@@ -462,6 +458,6 @@
         private System.Windows.Forms.Label labelStrah;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.TextBox textBoxSearch;
-        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Label labelSearch;
     }
 }

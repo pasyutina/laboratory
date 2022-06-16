@@ -196,12 +196,14 @@ namespace pasvlas
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
-            ListViewItem foundItem =
-            listViewPatient.FindItemWithText(textBoxSearch.Text, true, 0, true);
+            
+                ListViewItem foundItem =
+                listViewPatient.FindItemWithText(textBoxSearch.Text, true, 0, true);
             if (foundItem != null)
             {
                 listViewPatient.TopItem = foundItem;
             }
+            
         }
     }
 }

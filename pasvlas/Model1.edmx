@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище PodgotovkaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="date" Type="date" />
+          <Property Name="idService" Type="int" />
+          <Property Name="idPatient" Type="int" />
+          <Property Name="dateService" Type="date" />
+          <Property Name="code" Type="int" />
+          <Property Name="idUsers" Type="int" />
+        </EntityType>
+        <EntityType Name="patients">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="login" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="date" Type="date" />
+          <Property Name="pasport" Type="nvarchar" MaxLength="50" />
+          <Property Name="phone_number" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="insurance_policy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="services">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="int" />
+          <Property Name="service" Type="nvarchar" MaxLength="50" />
+          <Property Name="price" Type="nvarchar" MaxLength="50" />
+          <Property Name="srok" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="login" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="type" Type="int" />
+          <Property Name="photo" Type="image" />
+        </EntityType>
+        <Association Name="FK_order_patients">
+          <End Role="patients" Type="Self.patients" Multiplicity="0..1" />
+          <End Role="order" Type="Self.order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="patients">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="order">
+              <PropertyRef Name="idPatient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_order_services">
+          <End Role="services" Type="Self.services" Multiplicity="0..1" />
+          <End Role="order" Type="Self.order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="services">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="order">
+              <PropertyRef Name="idService" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_order_users">
+          <End Role="users" Type="Self.users" Multiplicity="0..1" />
+          <End Role="order" Type="Self.order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="order">
+              <PropertyRef Name="idUsers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище PodgotovkaModelContainer">
+          <EntitySet Name="order" EntityType="Self.order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="patients" EntityType="Self.patients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="services" EntityType="Self.services" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_order_patients" Association="Self.FK_order_patients">
+            <End Role="patients" EntitySet="patients" />
+            <End Role="order" EntitySet="order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_order_services" Association="Self.FK_order_services">
+            <End Role="services" EntitySet="services" />
+            <End Role="order" EntitySet="order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_order_users" Association="Self.FK_order_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="order" EntitySet="order" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PodgotovkaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="idService" Type="Int32" />
+          <Property Name="idPatient" Type="Int32" />
+          <Property Name="dateService" Type="DateTime" Precision="0" />
+          <Property Name="code" Type="Int32" />
+          <Property Name="idUsers" Type="Int32" />
+          <NavigationProperty Name="patients" Relationship="Self.FK_order_patients" FromRole="order" ToRole="patients" />
+          <NavigationProperty Name="services" Relationship="Self.FK_order_services" FromRole="order" ToRole="services" />
+          <NavigationProperty Name="users" Relationship="Self.FK_order_users" FromRole="order" ToRole="users" />
+        </EntityType>
+        <EntityType Name="patients">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="pasport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="insurance_policy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="order" Relationship="Self.FK_order_patients" FromRole="patients" ToRole="order" />
+        </EntityType>
+        <EntityType Name="services">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="Int32" />
+          <Property Name="service" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="srok" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="order" Relationship="Self.FK_order_services" FromRole="services" ToRole="order" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="type" Type="Int32" />
+          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="order" Relationship="Self.FK_order_users" FromRole="users" ToRole="order" />
+        </EntityType>
+        <Association Name="FK_order_patients">
+          <End Role="patients" Type="Self.patients" Multiplicity="0..1" />
+          <End Role="order" Type="Self.order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="patients">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="order">
+              <PropertyRef Name="idPatient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_order_services">
+          <End Role="services" Type="Self.services" Multiplicity="0..1" />
+          <End Role="order" Type="Self.order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="services">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="order">
+              <PropertyRef Name="idService" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_order_users">
+          <End Role="users" Type="Self.users" Multiplicity="0..1" />
+          <End Role="order" Type="Self.order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="order">
+              <PropertyRef Name="idUsers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PodgotovkaEntities6" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="order" EntityType="Self.order" />
+          <EntitySet Name="patients" EntityType="Self.patients" />
+          <EntitySet Name="services" EntityType="Self.services" />
+          <EntitySet Name="users" EntityType="Self.users" />
+          <AssociationSet Name="FK_order_patients" Association="Self.FK_order_patients">
+            <End Role="patients" EntitySet="patients" />
+            <End Role="order" EntitySet="order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_order_services" Association="Self.FK_order_services">
+            <End Role="services" EntitySet="services" />
+            <End Role="order" EntitySet="order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_order_users" Association="Self.FK_order_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="order" EntitySet="order" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище PodgotovkaModelContainer" CdmEntityContainer="PodgotovkaEntities6">
+          <EntitySetMapping Name="order">
+            <EntityTypeMapping TypeName="PodgotovkaModel.order">
+              <MappingFragment StoreEntitySet="order">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="idService" ColumnName="idService" />
+                <ScalarProperty Name="idPatient" ColumnName="idPatient" />
+                <ScalarProperty Name="dateService" ColumnName="dateService" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="idUsers" ColumnName="idUsers" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="patients">
+            <EntityTypeMapping TypeName="PodgotovkaModel.patients">
+              <MappingFragment StoreEntitySet="patients">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="pasport" ColumnName="pasport" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="insurance_policy" ColumnName="insurance_policy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="services">
+            <EntityTypeMapping TypeName="PodgotovkaModel.services">
+              <MappingFragment StoreEntitySet="services">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="service" ColumnName="service" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="srok" ColumnName="srok" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="PodgotovkaModel.users">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -131,7 +131,7 @@ namespace pasvlas
 
         private void buttonChar_Click(object sender, EventArgs e)
         {
-            Hyi hui = new Hyi();
+            ChartService hui = new ChartService();
             hui.Show();
             this.Hide();
         }

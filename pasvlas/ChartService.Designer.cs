@@ -1,6 +1,6 @@
 ﻿namespace pasvlas
 {
-    partial class Hyi
+    partial class ChartService
     {
         /// <summary>
         /// Required designer variable.

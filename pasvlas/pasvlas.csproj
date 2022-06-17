@@ -69,11 +69,11 @@
     <Compile Include="Biomaterial.Designer.cs">
       <DependentUpon>Biomaterial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hyi.cs">
+    <Compile Include="ChartService.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hyi.Designer.cs">
-      <DependentUpon>Hyi.cs</DependentUpon>
+    <Compile Include="ChartService.Designer.cs">
+      <DependentUpon>ChartService.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -145,8 +145,8 @@
     <EmbeddedResource Include="Biomaterial.resx">
       <DependentUpon>Biomaterial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hyi.resx">
-      <DependentUpon>Hyi.cs</DependentUpon>
+    <EmbeddedResource Include="ChartService.resx">
+      <DependentUpon>ChartService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

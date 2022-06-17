@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace pasvlas
 {
-    public partial class Hyi : Form
+    public partial class ChartService : Form
     {
-        public Hyi()
+        public ChartService()
         {
             InitializeComponent();
         }

@@ -52,9 +52,7 @@
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonDel = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.labelEmail = new System.Windows.Forms.Label();
-            this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.labelPhone = new System.Windows.Forms.Label();
             this.textBoxPasport = new System.Windows.Forms.TextBox();
             this.labelPasport = new System.Windows.Forms.Label();
@@ -62,9 +60,11 @@
             this.textBoxStrah = new System.Windows.Forms.TextBox();
             this.labelStrah = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
+            this.textBoxPhone = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -254,13 +254,6 @@
             this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.Location = new System.Drawing.Point(204, 158);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(186, 30);
-            this.textBoxEmail.TabIndex = 33;
-            // 
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
@@ -270,16 +263,6 @@
             this.labelEmail.Size = new System.Drawing.Size(56, 23);
             this.labelEmail.TabIndex = 32;
             this.labelEmail.Text = "E-mail";
-            // 
-            // textBoxPhone
-            // 
-            this.textBoxPhone.Location = new System.Drawing.Point(12, 158);
-            this.textBoxPhone.MaxLength = 11;
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(186, 30);
-            this.textBoxPhone.TabIndex = 31;
-            this.textBoxPhone.TextChanged += new System.EventHandler(this.textBoxPhone_TextChanged);
-            this.textBoxPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPhone_KeyPress);
             // 
             // labelPhone
             // 
@@ -342,22 +325,13 @@
             // 
             // dateTimePicker
             // 
+            this.dateTimePicker.CustomFormat = "dd.MM.yyyy";
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker.Location = new System.Drawing.Point(396, 38);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(186, 30);
             this.dateTimePicker.TabIndex = 36;
-            // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.Image = global::pasvlas.Properties.Resources.logo;
-            this.pictureBoxLogo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(706, 23);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(98, 165);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxLogo.TabIndex = 25;
-            this.pictureBoxLogo.TabStop = false;
-            this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
+            this.dateTimePicker.Value = new System.DateTime(2022, 6, 16, 0, 0, 0, 0);
             // 
             // textBoxSearch
             // 
@@ -378,12 +352,40 @@
             this.labelSearch.TabIndex = 39;
             this.labelSearch.Text = "Найти пациента";
             // 
+            // textBoxPhone
+            // 
+            this.textBoxPhone.Location = new System.Drawing.Point(12, 158);
+            this.textBoxPhone.Mask = "+7(999)-000-00-00";
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(186, 30);
+            this.textBoxPhone.TabIndex = 40;
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Location = new System.Drawing.Point(204, 158);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(186, 30);
+            this.textBoxEmail.TabIndex = 33;
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Image = global::pasvlas.Properties.Resources.logo;
+            this.pictureBoxLogo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(706, 38);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(98, 150);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogo.TabIndex = 25;
+            this.pictureBoxLogo.TabStop = false;
+            this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
+            // 
             // Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(816, 452);
+            this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.dateTimePicker);
@@ -391,7 +393,6 @@
             this.Controls.Add(this.labelStrah);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.labelEmail);
-            this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.labelPhone);
             this.Controls.Add(this.textBoxPasport);
             this.Controls.Add(this.labelPasport);
@@ -447,9 +448,7 @@
         private System.Windows.Forms.ColumnHeader phone;
         private System.Windows.Forms.ColumnHeader email;
         private System.Windows.Forms.ColumnHeader polisy;
-        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label labelEmail;
-        private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.TextBox textBoxPasport;
         private System.Windows.Forms.Label labelPasport;
@@ -459,5 +458,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Label labelSearch;
+        private System.Windows.Forms.MaskedTextBox textBoxPhone;
+        private System.Windows.Forms.TextBox textBoxEmail;
     }
 }

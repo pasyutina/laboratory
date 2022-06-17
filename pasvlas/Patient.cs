@@ -26,7 +26,7 @@ namespace pasvlas
                 ListViewItem item = new ListViewItem(new string[]
                 {
                    patients.id.ToString(),
-                   patients.name, patients.surname, patients.login, patients.password, patients.date.ToString(), patients.pasport, patients.phone_number,
+                   patients.name, patients.surname, patients.login, patients.password, patients.date.ToString("dd/MM/yyyy"), patients.pasport, patients.phone_number,
                    patients.email, patients.insurance_policy
                 });
                 item.Tag = patients;
@@ -57,7 +57,7 @@ namespace pasvlas
                 textBoxSurname.Text = patients.surname;
                 textBoxLogin.Text = patients.login;
                 textBoxPass.Text = patients.password;
-                dateTimePicker.Value = patients.date.GetValueOrDefault();
+                dateTimePicker.Value = patients.date;
                 textBoxPasport.Text = patients.pasport;
                 textBoxPhone.Text = patients.phone_number;
                 textBoxEmail.Text = patients.email;
@@ -81,21 +81,22 @@ namespace pasvlas
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             if (textBoxName.Text != "" && textBoxSurname.Text != "" && textBoxLogin.Text != "" && textBoxPass.Text != "" && textBoxPasport.Text != "" &&
-                textBoxPhone.Text != "" && textBoxStrah.Text != "" && textBoxEmail.Text != "")
+                textBoxPhone.MaskCompleted != false && textBoxStrah.Text != "" && textBoxEmail.Text != "")
             {
                 patients patients = new patients();
-                patients.name = Convert.ToString(textBoxName.Text);
-                patients.surname = Convert.ToString(textBoxSurname.Text);
-                patients.login = Convert.ToString(textBoxLogin.Text);
-                patients.password = Convert.ToString(textBoxPass.Text);
+                patients.name = textBoxName.Text;
+                patients.surname = textBoxSurname.Text;
+                patients.login = textBoxLogin.Text;
+                patients.password = textBoxPass.Text;
                 patients.date = dateTimePicker.Value;
-                patients.pasport = Convert.ToString(textBoxPasport.Text);
-                patients.phone_number = Convert.ToString(textBoxPhone.Text);
-                patients.email = Convert.ToString(textBoxEmail.Text);
-                patients.insurance_policy = Convert.ToString(textBoxStrah.Text);
+                patients.pasport = textBoxPasport.Text;
+                patients.phone_number = textBoxPhone.Text;
+                patients.email = textBoxEmail.Text;
+                patients.insurance_policy = textBoxStrah.Text;
                 Program.wftDb.patients.Add(patients);
                 Program.wftDb.SaveChanges();
                 ShowPatient();
+
             }
             else MessageBox.Show("Данные не выбраны", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -110,23 +111,34 @@ namespace pasvlas
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             if (textBoxName.Text != "" && textBoxSurname.Text != "" && textBoxLogin.Text != "" && textBoxPass.Text != "" && textBoxPasport.Text != "" &&
-                textBoxPhone.Text != "" && textBoxStrah.Text != "" && textBoxEmail.Text != "")
+               textBoxPhone.MaskCompleted != false && textBoxStrah.Text != "" && textBoxEmail.Text != "")
             {
                 if (listViewPatient.SelectedItems.Count == 1)
                 {
                     patients patients = listViewPatient.SelectedItems[0].Tag as patients;
-                    patients.name = Convert.ToString(textBoxName.Text);
-                    patients.surname = Convert.ToString(textBoxSurname.Text);
-                    patients.login = Convert.ToString(textBoxLogin.Text);
-                    patients.password = Convert.ToString(textBoxPass.Text);
+                    patients.name = textBoxName.Text;
+                    patients.surname = textBoxSurname.Text;
+                    patients.login = textBoxLogin.Text;
+                    patients.password = textBoxPass.Text;
                     patients.date = dateTimePicker.Value;
-                    patients.pasport = Convert.ToString(textBoxPasport.Text);
-                    patients.phone_number = Convert.ToString(textBoxPhone.Text);
-                    patients.email = Convert.ToString(textBoxEmail.Text);
-                    patients.insurance_policy = Convert.ToString(textBoxStrah.Text);
+                    patients.pasport = textBoxPasport.Text;
+                    patients.phone_number = textBoxPhone.Text;
+                    patients.email = textBoxEmail.Text;
+                    patients.insurance_policy = textBoxStrah.Text;
                     Program.wftDb.SaveChanges();
                     ShowPatient();
+                   
                 }
+                    textBoxName.Text = "";
+                    textBoxSurname.Text = "";
+                    textBoxLogin.Text = "";
+                    textBoxPass.Text = "";
+                    dateTimePicker.Value = DateTime.Now;
+                    textBoxPasport.Text = "";
+                    textBoxPhone.Text = "";
+                    textBoxEmail.Text = "";
+                    textBoxStrah.Text = "";
+                
             }
             else
             {
@@ -190,7 +202,7 @@ namespace pasvlas
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-           
+            
 
         }
 
@@ -199,11 +211,16 @@ namespace pasvlas
             
                 ListViewItem foundItem =
                 listViewPatient.FindItemWithText(textBoxSearch.Text, true, 0, true);
-            if (foundItem != null)
+            if (foundItem != null )
             {
                 listViewPatient.TopItem = foundItem;
+                foundItem.BackColor = SystemColors.GrayText;
             }
-            
+        }
+
+        private void buttonChar_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

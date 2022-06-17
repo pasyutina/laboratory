@@ -5,6 +5,15 @@ VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pasvlas", "pasvlas\pasvlas.csproj", "{4CCCD92B-1A74-4653-89E7-AA71653883E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{A3AE8557-C0EF-4E7F-B4E7-71B2E290EFD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{961C9D84-4887-41EA-9C0F-44689CA0CE7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{379AEF81-17CE-41DC-B008-5AB4AD30C255}"
+	ProjectSection(SolutionItems) = preProject
+		TextFile1.txt = TextFile1.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +24,14 @@ Global
 		{4CCCD92B-1A74-4653-89E7-AA71653883E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CCCD92B-1A74-4653-89E7-AA71653883E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CCCD92B-1A74-4653-89E7-AA71653883E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3AE8557-C0EF-4E7F-B4E7-71B2E290EFD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3AE8557-C0EF-4E7F-B4E7-71B2E290EFD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3AE8557-C0EF-4E7F-B4E7-71B2E290EFD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3AE8557-C0EF-4E7F-B4E7-71B2E290EFD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{961C9D84-4887-41EA-9C0F-44689CA0CE7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{961C9D84-4887-41EA-9C0F-44689CA0CE7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{961C9D84-4887-41EA-9C0F-44689CA0CE7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{961C9D84-4887-41EA-9C0F-44689CA0CE7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

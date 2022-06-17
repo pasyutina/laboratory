@@ -25,7 +25,7 @@ namespace pasvlas
         public string surname { get; set; }
         public string login { get; set; }
         public string password { get; set; }
-        public Nullable<System.DateTime> date { get; set; }
+        public System.DateTime date { get; set; }
         public string pasport { get; set; }
         public string phone_number { get; set; }
         public string email { get; set; }

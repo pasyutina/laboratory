@@ -113,5 +113,13 @@ namespace pasvlas
             registration.Show();
             this.Hide();
         }
+
+        private void pictureBoxLogo_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Выйти?", "Внимание!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

@@ -61,11 +61,18 @@ namespace pasvlas
                 {
                     services service = listViewService.SelectedItems[0].Tag as services;
                     service.code = Convert.ToInt32(textBoxCode.Text);
-                    service.service = Convert.ToString(textBoxName.Text);
-                    service.price = Convert.ToString(textBoxPrice.Text);
-                    service.srok = Convert.ToString(textBoxSrok.Text);
+                    service.service = textBoxName.Text;
+                    service.price = textBoxPrice.Text;
+                    service.srok = textBoxSrok.Text;
                     Program.wftDb.SaveChanges();
                     ShowService();
+                }
+                else
+                {
+                    textBoxCode.Text = "";
+                    textBoxName.Text = "";
+                    textBoxPrice.Text = "";
+                    textBoxSrok.Text = "";
                 }
             }
             else
@@ -119,6 +126,13 @@ namespace pasvlas
         {
             Form menu = new Menu();
             menu.Show();
+            this.Hide();
+        }
+
+        private void buttonChar_Click(object sender, EventArgs e)
+        {
+            Hyi hui = new Hyi();
+            hui.Show();
             this.Hide();
         }
     }

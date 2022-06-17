@@ -46,14 +46,12 @@
             this.textBoxSrok = new System.Windows.Forms.TextBox();
             this.labelSrok = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.buttonChar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(227)))), ((int)(((byte)(131)))));
             this.buttonAdd.FlatAppearance.BorderSize = 0;
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -68,9 +66,6 @@
             // 
             // buttonDel
             // 
-            this.buttonDel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(227)))), ((int)(((byte)(131)))));
             this.buttonDel.FlatAppearance.BorderSize = 0;
             this.buttonDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -85,9 +80,6 @@
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(227)))), ((int)(((byte)(131)))));
             this.buttonEdit.FlatAppearance.BorderSize = 0;
             this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -102,9 +94,6 @@
             // 
             // listViewService
             // 
-            this.listViewService.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewService.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.id,
             this.code,
@@ -149,9 +138,6 @@
             // 
             // labelCode
             // 
-            this.labelCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelCode.AutoSize = true;
             this.labelCode.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.labelCode.Location = new System.Drawing.Point(22, 8);
@@ -162,9 +148,6 @@
             // 
             // textBoxCode
             // 
-            this.textBoxCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxCode.Location = new System.Drawing.Point(26, 35);
             this.textBoxCode.Name = "textBoxCode";
             this.textBoxCode.Size = new System.Drawing.Size(141, 30);
@@ -172,9 +155,6 @@
             // 
             // textBoxName
             // 
-            this.textBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxName.Location = new System.Drawing.Point(26, 95);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(141, 30);
@@ -182,9 +162,6 @@
             // 
             // labelName
             // 
-            this.labelName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelName.AutoSize = true;
             this.labelName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.labelName.Location = new System.Drawing.Point(22, 68);
@@ -195,9 +172,6 @@
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPrice.Location = new System.Drawing.Point(26, 155);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(141, 30);
@@ -205,9 +179,6 @@
             // 
             // labelPrice
             // 
-            this.labelPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPrice.AutoSize = true;
             this.labelPrice.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.labelPrice.Location = new System.Drawing.Point(22, 128);
@@ -218,9 +189,6 @@
             // 
             // textBoxSrok
             // 
-            this.textBoxSrok.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSrok.Location = new System.Drawing.Point(26, 215);
             this.textBoxSrok.Name = "textBoxSrok";
             this.textBoxSrok.Size = new System.Drawing.Size(141, 30);
@@ -228,9 +196,6 @@
             // 
             // labelSrok
             // 
-            this.labelSrok.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSrok.AutoSize = true;
             this.labelSrok.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.labelSrok.Location = new System.Drawing.Point(22, 188);
@@ -241,9 +206,6 @@
             // 
             // pictureBoxLogo
             // 
-            this.pictureBoxLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxLogo.Image = global::pasvlas.Properties.Resources.logo;
             this.pictureBoxLogo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pictureBoxLogo.Location = new System.Drawing.Point(26, 251);
@@ -254,6 +216,20 @@
             this.pictureBoxLogo.TabStop = false;
             this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
             // 
+            // buttonChar
+            // 
+            this.buttonChar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(227)))), ((int)(((byte)(131)))));
+            this.buttonChar.FlatAppearance.BorderSize = 0;
+            this.buttonChar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonChar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonChar.Location = new System.Drawing.Point(26, 301);
+            this.buttonChar.Name = "buttonChar";
+            this.buttonChar.Size = new System.Drawing.Size(600, 37);
+            this.buttonChar.TabIndex = 13;
+            this.buttonChar.Text = "Посмотреть график";
+            this.buttonChar.UseVisualStyleBackColor = false;
+            this.buttonChar.Click += new System.EventHandler(this.buttonChar_Click);
+            // 
             // Service
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -261,7 +237,8 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(638, 305);
+            this.ClientSize = new System.Drawing.Size(638, 345);
+            this.Controls.Add(this.buttonChar);
             this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.textBoxSrok);
             this.Controls.Add(this.labelSrok);
@@ -276,8 +253,7 @@
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.buttonAdd);
             this.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.MaximumSize = new System.Drawing.Size(654, 344);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimumSize = new System.Drawing.Size(654, 344);
             this.Name = "Service";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -309,5 +285,6 @@
         private System.Windows.Forms.TextBox textBoxSrok;
         private System.Windows.Forms.Label labelSrok;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
+        private System.Windows.Forms.Button buttonChar;
     }
 }

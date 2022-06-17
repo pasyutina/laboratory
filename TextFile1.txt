@@ -1,0 +1,4 @@
+  for (int i = 0; i <= 360; i++) {
+                double b = Math.sin(i);
+                pw.print(i+" "+b+"\r\n");
+            }
